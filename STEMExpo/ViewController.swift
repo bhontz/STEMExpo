@@ -9,6 +9,8 @@
 
 import UIKit
 
+var strTempName:String = ""
+
 class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var expoTableView: UITableView!
@@ -36,12 +38,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = r["Company"] as? String
         return cell
     }
-
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let r = jsonSorted[indexPath.row]
+        strTempName = r["Name"] as? String ?? "Empty"
+        print(strTempName)
+        performSegue(withIdentifier: "seque", sender: self)
+    }
 }
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       // <#code#>
+        // code
     }
 }
+
 

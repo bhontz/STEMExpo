@@ -15,6 +15,7 @@
 		A20E95A1237C8844002E1990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20E959F237C8844002E1990 /* LaunchScreen.storyboard */; };
 		A20E95AC237C8844002E1990 /* STEMExpoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E95AB237C8844002E1990 /* STEMExpoTests.swift */; };
 		A20E95B7237C931E002E1990 /* stemEXPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E95B6237C931E002E1990 /* stemEXPO.swift */; };
+		A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2444B10237CF75300F82478 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A20E95AB237C8844002E1990 /* STEMExpoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEMExpoTests.swift; sourceTree = "<group>"; };
 		A20E95AD237C8844002E1990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20E95B6237C931E002E1990 /* stemEXPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemEXPO.swift; sourceTree = "<group>"; };
+		A2444B10237CF75300F82478 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				A20E9598237C8843002E1990 /* ViewController.swift */,
 				A20E95B6237C931E002E1990 /* stemEXPO.swift */,
 				A20E959A237C8843002E1990 /* Main.storyboard */,
+				A2444B10237CF75300F82478 /* DetailViewController.swift */,
 				A20E959D237C8844002E1990 /* Assets.xcassets */,
 				A20E959F237C8844002E1990 /* LaunchScreen.storyboard */,
 				A20E95A2237C8844002E1990 /* Info.plist */,
@@ -205,6 +208,7 @@
 			files = (
 				A20E9599237C8843002E1990 /* ViewController.swift in Sources */,
 				A20E9595237C8843002E1990 /* AppDelegate.swift in Sources */,
+				A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */,
 				A20E95B7237C931E002E1990 /* stemEXPO.swift in Sources */,
 				A20E9597237C8843002E1990 /* SceneDelegate.swift in Sources */,
 			);
