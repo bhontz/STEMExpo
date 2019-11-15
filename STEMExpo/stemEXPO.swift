@@ -1,12 +1,18 @@
 //
 //  stemEXPO.swift
 //  STEMExpo
+//  SALK - this module contains a global data variable containing all of the data for our app
+//  as well as a 'sortedData' global variable which is
+//  where we'll hold a sorted copy of the data.   Sorting
+//  occurs within AppDelegate.swift method launchOptions
 //
 //  Created by brad.hontz on 11/13/19.
 //  Copyright © 2019 brad.hontz. All rights reserved.
 //
 
 import Foundation
+
+var sortedData: [[String:Any]] = jsonData
 
 var jsonData: [[String: Any]] =
 [["Company": "Orange County Crime Lab", "Name": "Vanessa Meneses", "Phone": "562-453-9899", "NTABLES": "2", "ACPOWER": "No", "WIFI": "Yes", "COOKIES": 0],

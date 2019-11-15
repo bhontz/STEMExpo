@@ -9,7 +9,7 @@
 
 import UIKit
 
-var strTempName:String = ""
+var intSelectedIndex = 0  // used to pass the selected row index to the next scene
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,31 +18,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SBar.delegate = self
         // Do any additional setup after loading the view.
+        SBar.delegate = self
     }
 
-    let jsonSorted = (jsonData as NSArray).sortedArray(using: [NSSortDescriptor(key: "Company", ascending: true)]) as! [[String:Any]]
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jsonSorted.count
+        return sortedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let r = jsonSorted[indexPath.row]
+        let r = sortedData[indexPath.row]
         cell.textLabel?.text = r["Company"] as? String
         return cell
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let r = jsonSorted[indexPath.row]
-        strTempName = r["Name"] as? String ?? "Empty"
-        print(strTempName)
+        intSelectedIndex = indexPath.row
         performSegue(withIdentifier: "seque", sender: self)
     }
 }
