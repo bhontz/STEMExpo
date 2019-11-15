@@ -15,12 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HqA-ow-jLL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="HqA-ow-jLL">
+                                <rect key="frame" x="0.0" y="12" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ag-5c-W1r">
-                                <rect key="frame" x="0.0" y="88" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="79" width="414" height="558"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -50,10 +50,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4ag-5c-W1r" firstAttribute="top" secondItem="HqA-ow-jLL" secondAttribute="bottom" id="dfp-tF-CGX"/>
-                            <constraint firstItem="HqA-ow-jLL" firstAttribute="leading" secondItem="4ag-5c-W1r" secondAttribute="leading" id="k2c-Ku-uzh"/>
-                            <constraint firstItem="HqA-ow-jLL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="nTH-oP-qNN"/>
-                            <constraint firstItem="HqA-ow-jLL" firstAttribute="trailing" secondItem="4ag-5c-W1r" secondAttribute="trailing" id="oua-BA-NgD"/>
+                            <constraint firstItem="HqA-ow-jLL" firstAttribute="leading" secondItem="4ag-5c-W1r" secondAttribute="leading" id="IE8-Bf-utt"/>
+                            <constraint firstItem="HqA-ow-jLL" firstAttribute="trailing" secondItem="4ag-5c-W1r" secondAttribute="trailing" id="O6R-37-fRg"/>
+                            <constraint firstItem="HqA-ow-jLL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="uiy-tN-RAK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
