@@ -11,7 +11,7 @@ import UIKit
 
 var strTempName:String = ""
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var expoTableView: UITableView!
     @IBOutlet weak var SBar: UISearchBar!
@@ -49,7 +49,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // code
+        guard let searchBarText = searchBar.text else {return}
+        print(searchBarText)
     }
 }
 
