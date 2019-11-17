@@ -18,11 +18,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblCompany.text = sortedData[intSelectedIndex]["Company"] as? String
-        lblName.text = sortedData[intSelectedIndex]["Name"] as? String
-        lblPhone.text = sortedData[intSelectedIndex]["Phone"] as? String
-        lblACPower.text = sortedData[intSelectedIndex]["ACPOWER"] as? String
-        lblWiFi.text = sortedData[intSelectedIndex]["WIFI"] as? String
+        lblCompany.text = selectedElement["Company"] as? String
+        lblName.text = selectedElement["Name"] as? String
+        lblPhone.text = selectedElement["Phone"] as? String
+        lblACPower.text = selectedElement["ACPOWER"] as? String
+        lblWiFi.text = selectedElement["WIFI"] as? String
 
     }
 }
