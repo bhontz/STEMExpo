@@ -15,8 +15,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblACPower: UILabel!
     @IBOutlet weak var lblWiFi: UILabel!
+ 
+    // ToDo: initialize the state and save the state
+
+    @IBAction func btnCheckBox(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
     
     var phonenbr: String!
+    var deliveredCookies: Bool!
+    var myButton: btnCheckBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +43,12 @@ class DetailViewController: UIViewController {
         lblName.text = selectedElement["Name"] as? String
         lblACPower.text = selectedElement["ACPOWER"] as? String
         lblWiFi.text = selectedElement["WIFI"] as? String
+        
+x`//        if selectedElement["COOKIES"] == "0" {
+//            deliveredCookies = false
+//        } else {
+//            deliveredCookies = true
+//        }
 
     }
     
@@ -51,4 +69,5 @@ class DetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+        
 }
