@@ -153,21 +153,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYs-3w-qnc">
-                                <rect key="frame" x="277" y="403" width="54" height="50"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSG-2j-yyu" customClass="Checkbox" customModule="STEMExpo" customModuleProvider="target">
+                                <rect key="frame" x="245" y="408" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="unchecked"/>
-                                <state key="selected" image="checked"/>
-                                <connections>
-                                    <action selector="btnCheckBox:" destination="54t-CU-xwc" eventType="touchUpInside" id="5IN-hd-Rtw"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="YAE-oe-fGo"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mwv-uX-CEB"/>
                     <connections>
+                        <outlet property="checkbox" destination="MSG-2j-yyu" id="jId-4m-852"/>
                         <outlet property="lblACPower" destination="YrZ-6A-snR" id="erD-L0-1W0"/>
                         <outlet property="lblCompany" destination="uhn-hi-TGk" id="wkY-g6-of3"/>
                         <outlet property="lblName" destination="Bu4-ov-Znp" id="k4c-c0-ogh"/>
@@ -180,8 +177,4 @@
             <point key="canvasLocation" x="931.88405797101461" y="128.57142857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checked" width="50" height="50"/>
-        <image name="unchecked" width="50" height="50"/>
-    </resources>
 </document>

@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         didSet {
             DispatchQueue.main.async {
                 self.expoTableView.reloadData()
-                // HACK - this assures that a search term that
+                // HACK BELOW: this assures that a search term that
                 // doesn't match ANYTHING returns EVERYTHING
                 if self.viewData.count == 0 {
                     self.viewData = sortedData

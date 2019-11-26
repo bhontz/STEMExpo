@@ -15,23 +15,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblACPower: UILabel!
     @IBOutlet weak var lblWiFi: UILabel!
- 
-    // ToDo: initialize the state and save the state
-
-    @IBAction func btnCheckBox(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-        } else {
-            sender.isSelected = true
-        }
-    }
+    @IBOutlet weak var checkbox: Checkbox!
     
     var phonenbr: String!
-    var deliveredCookies: Bool!
-    var myButton: btnCheckBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkbox.checkmarkStyle = .tick
+        checkbox.checkmarkColor = .blue
+        if selectedElement["COOKIES"] as? Int == 0 {
+            checkbox.isChecked = false
+        } else {
+            checkbox.isChecked = true
+        }
+        
+        checkbox.addTarget(self, action: #selector(checkboxValueChanged(sender:)), for: .valueChanged)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapFunction))
         lblPhone.isUserInteractionEnabled = true
@@ -43,13 +42,13 @@ class DetailViewController: UIViewController {
         lblName.text = selectedElement["Name"] as? String
         lblACPower.text = selectedElement["ACPOWER"] as? String
         lblWiFi.text = selectedElement["WIFI"] as? String
-        
-x`//        if selectedElement["COOKIES"] == "0" {
-//            deliveredCookies = false
-//        } else {
-//            deliveredCookies = true
-//        }
 
+    }
+    
+    @objc func checkboxValueChanged(sender: Checkbox) {
+        //TODO: how to make this change persistant, even
+        // while using the app!
+        print("Checkbox value has changed: \(sender.isChecked)")
     }
     
     @objc func tapFunction(sender:UITapGestureRecognizer) {
