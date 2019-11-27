@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DetailViewController: UIViewController {
     
@@ -18,9 +19,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var checkbox: Checkbox!
     
     var phonenbr: String!
+    var ref: DatabaseReference!
+    var refHandle: DatabaseHandle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         
         checkbox.checkmarkStyle = .tick
         checkbox.checkmarkColor = .blue
@@ -42,7 +46,13 @@ class DetailViewController: UIViewController {
         lblName.text = selectedElement["Name"] as? String
         lblACPower.text = selectedElement["ACPOWER"] as? String
         lblWiFi.text = selectedElement["WIFI"] as? String
-
+        
+        // This works!  Allows viewing a single node's value(s)
+        refHandle = self.ref?.child("jsonFIRData").child("004").observe(.value, with: {(snapshop) in
+            let value = snapshop.value as? NSDictionary
+            let name = value?["Name"] as? String ?? "bogus"
+            print("The name is: \(name)")
+        })
     }
     
     @objc func checkboxValueChanged(sender: Checkbox) {
@@ -68,5 +78,28 @@ class DetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    deinit {
+        if refHandle != nil {
+            self.ref?.child("jsonFIRData").child("004").removeObserver(withHandle: refHandle)
+        }
+    }
+    
+//    deinit {
+//      if let refHandle = _refHandle {
+//        self.ref.child("jsonFBData").removeObserver(withHandle: _refHandle)
+//      }
+//    }
+//
+//    func configureDatabase() {
+//      ref = Database.database().reference()
+//      // Listen for new messages in the Firebase database
+//      _refHandle = self.ref.child("jsonFBData").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+//        guard let strongSelf = self else { return }
+//        strongSelf.jsonFBData.append(snapshot)
+//        print("Count: \(strongSelf.jsonFBData.count)")
+//        //strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+//      })
+//    }
         
 }

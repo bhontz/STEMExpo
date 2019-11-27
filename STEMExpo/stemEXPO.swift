@@ -12,6 +12,18 @@
 
 import Foundation
 
+struct Constants {
+  struct jsonDataFields {
+    static let Company = "name"
+    static let Name = "text"
+    static let Phone = "phone"
+    static let NTABLES = "0"
+    static let WIFI = "No"
+    static let ACPOWER = "No"
+    static let COOKIES = 0
+  }
+}
+
 var sortedData: [[String:Any]] = jsonData
 
 var jsonData: [[String: Any]] =
