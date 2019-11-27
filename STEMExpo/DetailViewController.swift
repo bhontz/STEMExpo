@@ -36,10 +36,10 @@ class DetailViewController: UIViewController {
         
         checkbox.addTarget(self, action: #selector(checkboxValueChanged(sender:)), for: .valueChanged)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapFunction))
+        // handle a click on the phone number label
+        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapPhoneNumber))
         lblPhone.isUserInteractionEnabled = true
         lblPhone.addGestureRecognizer(tap)
-        // handle a click on this label
         lblPhone.text = selectedElement["Phone"] as? String
         
         lblCompany.text = selectedElement["Company"] as? String
@@ -48,11 +48,16 @@ class DetailViewController: UIViewController {
         lblWiFi.text = selectedElement["WIFI"] as? String
         
         // This works!  Allows viewing a single node's value(s)
-        refHandle = self.ref?.child("jsonFIRData").child("004").observe(.value, with: {(snapshop) in
-            let value = snapshop.value as? NSDictionary
+        refHandle = self.ref?.child("jsonFIRData").child("006").observe(.value, with: {(snapshop) in
             let name = value?["Name"] as? String ?? "bogus"
             print("The name is: \(name)")
         })
+    }
+    
+    deinit {
+        if refHandle != nil {
+            self.ref?.child("jsonFIRData").child("004").removeObserver(withHandle: refHandle)
+        }
     }
     
     @objc func checkboxValueChanged(sender: Checkbox) {
@@ -61,10 +66,10 @@ class DetailViewController: UIViewController {
         print("Checkbox value has changed: \(sender.isChecked)")
     }
     
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
+    @objc func tapPhoneNumber(sender:UITapGestureRecognizer) {
         makePhoneCall(phoneNumber: lblPhone.text ?? "")
-    
     }
+    
     // presents an action dialog to cancel or place phone call
     func makePhoneCall(phoneNumber: String) {
         if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
@@ -78,28 +83,4 @@ class DetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    deinit {
-        if refHandle != nil {
-            self.ref?.child("jsonFIRData").child("004").removeObserver(withHandle: refHandle)
-        }
-    }
-    
-//    deinit {
-//      if let refHandle = _refHandle {
-//        self.ref.child("jsonFBData").removeObserver(withHandle: _refHandle)
-//      }
-//    }
-//
-//    func configureDatabase() {
-//      ref = Database.database().reference()
-//      // Listen for new messages in the Firebase database
-//      _refHandle = self.ref.child("jsonFBData").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-//        guard let strongSelf = self else { return }
-//        strongSelf.jsonFBData.append(snapshot)
-//        print("Count: \(strongSelf.jsonFBData.count)")
-//        //strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
-//      })
-//    }
-        
 }
