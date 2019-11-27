@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // SALK - this method is called when the app launches,
         // so we're using it to sort our initially unsorted data array
         sortedData = (jsonData as NSArray).sortedArray(using: [NSSortDescriptor(key: "Company", ascending: true)]) as! [[String:Any]]
+        
+        FirebaseApp.configure()
 
         return true
     }
