@@ -164,7 +164,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mwv-uX-CEB"/>
                     <connections>
-                        <outlet property="checkbox" destination="MSG-2j-yyu" id="jId-4m-852"/>
+                        <outlet property="checkbox" destination="MSG-2j-yyu" id="Q4a-5z-eP3"/>
                         <outlet property="lblACPower" destination="YrZ-6A-snR" id="erD-L0-1W0"/>
                         <outlet property="lblCompany" destination="uhn-hi-TGk" id="wkY-g6-of3"/>
                         <outlet property="lblName" destination="Bu4-ov-Znp" id="k4c-c0-ogh"/>

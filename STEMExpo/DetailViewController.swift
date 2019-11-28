@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
 class DetailViewController: UIViewController {
     
@@ -19,57 +18,30 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var checkbox: Checkbox!
     
     var phonenbr: String!
-    var ref: DatabaseReference!
-    var refHandle: DatabaseHandle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
-        
-        checkbox.checkmarkStyle = .tick
+        checkbox.borderStyle = .square
         checkbox.checkmarkColor = .blue
-        if selectedElement["COOKIES"] as? Int == 0 {
-            checkbox.isChecked = false
-        } else {
-            checkbox.isChecked = true
-        }
+        checkbox.checkmarkStyle = .tick
         
-        checkbox.addTarget(self, action: #selector(checkboxValueChanged(sender:)), for: .valueChanged)
-        
-        // handle a click on the phone number label
         let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapPhoneNumber))
         lblPhone.isUserInteractionEnabled = true
         lblPhone.addGestureRecognizer(tap)
+        // handle a click on this label
         lblPhone.text = selectedElement["Phone"] as? String
         
         lblCompany.text = selectedElement["Company"] as? String
         lblName.text = selectedElement["Name"] as? String
         lblACPower.text = selectedElement["ACPOWER"] as? String
         lblWiFi.text = selectedElement["WIFI"] as? String
-        
-        // This works!  Allows viewing a single node's value(s)
-        refHandle = self.ref?.child("jsonFIRData").child("006").observe(.value, with: {(snapshop) in
-            let name = value?["Name"] as? String ?? "bogus"
-            print("The name is: \(name)")
-        })
-    }
-    
-    deinit {
-        if refHandle != nil {
-            self.ref?.child("jsonFIRData").child("004").removeObserver(withHandle: refHandle)
-        }
-    }
-    
-    @objc func checkboxValueChanged(sender: Checkbox) {
-        //TODO: how to make this change persistant, even
-        // while using the app!
-        print("Checkbox value has changed: \(sender.isChecked)")
+
     }
     
     @objc func tapPhoneNumber(sender:UITapGestureRecognizer) {
         makePhoneCall(phoneNumber: lblPhone.text ?? "")
-    }
     
+    }
     // presents an action dialog to cancel or place phone call
     func makePhoneCall(phoneNumber: String) {
         if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
