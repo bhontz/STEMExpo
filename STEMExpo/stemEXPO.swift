@@ -11,18 +11,22 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
-struct Constants {
-  struct jsonDataFields {
-    static let Company = "name"
-    static let Name = "text"
-    static let Phone = "phone"
-    static let NTABLES = "0"
-    static let WIFI = "No"
-    static let ACPOWER = "No"
-    static let COOKIES = 0
-  }
+// this is used in the ViewController as the tableview populator
+class Item {
+    var ref: DatabaseReference?
+    var id: String?
+    var company: String?
+    
+    init (snapshot: DataSnapshot) {
+        ref = snapshot.ref
+        id = snapshot.key
+        let data = snapshot.value as! [String:Any]
+        company = data["Company"] as? String
+    }
 }
+
 
 var sortedData: [[String:Any]] = jsonData
 

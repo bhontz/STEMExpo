@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DetailViewController: UIViewController {
     
@@ -18,24 +19,48 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var checkbox: Checkbox!
     
     var phonenbr: String!
+    var ref: DatabaseReference!
+    var selectedElement: [String:Any]!  // retaining the structure of the Firebase node
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         checkbox.borderStyle = .square
         checkbox.checkmarkColor = .blue
         checkbox.checkmarkStyle = .tick
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapPhoneNumber))
-        lblPhone.isUserInteractionEnabled = true
-        lblPhone.addGestureRecognizer(tap)
-        // handle a click on this label
-        lblPhone.text = selectedElement["Phone"] as? String
-        
-        lblCompany.text = selectedElement["Company"] as? String
-        lblName.text = selectedElement["Name"] as? String
-        lblACPower.text = selectedElement["ACPOWER"] as? String
-        lblWiFi.text = selectedElement["WIFI"] as? String
 
+        ref = Database.database().reference(withPath: "jsonFIRData")
+        fetchNode() {
+            if self.selectedElement["COOKIES"] as? Int == 0 {
+                self.checkbox.isChecked = false
+            } else {
+                self.checkbox.isChecked = true
+            }
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.tapPhoneNumber))
+            self.lblPhone.isUserInteractionEnabled = true
+            self.lblPhone.addGestureRecognizer(tap)
+            // handle a click on this label
+            self.lblPhone.text = self.selectedElement["Phone"] as? String
+            
+            self.lblCompany.text = self.selectedElement["Company"] as? String
+            self.lblName.text = self.selectedElement["Name"] as? String
+            self.lblACPower.text = self.selectedElement["ACPOWER"] as? String
+            self.lblWiFi.text = self.selectedElement["WIFI"] as? String
+        }
+    }
+    
+    func fetchNode(_ completion: @escaping () -> Void) {
+        ref.child(keyPass).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.selectedElement = snapshot.value as? [String:Any]
+            completion()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    @objc func checkboxValueChanged(sender: Checkbox) {
+        print("checkbox value changed: \(sender.isChecked)")
     }
     
     @objc func tapPhoneNumber(sender:UITapGestureRecognizer) {
