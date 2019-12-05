@@ -6,10 +6,8 @@
 //  Copyright © 2019 brad.hontz. All rights reserved.
 //
 
-
 import UIKit
 import FirebaseDatabase
-
 
 var selectedElement: [String:Any]!
 var keyPass: String!
@@ -45,9 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for child in snapshot.children {
                 let item = Item(snapshot: child as! DataSnapshot)
                 newItems.append(item)
-                print(item)
             }
-            self.viewData = newItems
+            self.viewData = newItems.sorted(by: {$0.company! < $1.company!})
             self.expoTableView.reloadData()
         })
     }
@@ -57,15 +54,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("count in number of rows func: \(self.myBradThing.count)")
-        print("count in viewData: \(self.viewData.count)")
         return self.viewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let r = self.viewData[indexPath.row]
-        print("Company: \(String(describing: r.company))")
         cell.textLabel?.text = r.company
         return cell
     }
