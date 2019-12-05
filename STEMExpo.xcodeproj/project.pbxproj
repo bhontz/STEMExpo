@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283D2E013AADE6777F0CCA57 /* Pods_STEMExpo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616226C8F82143D90A115310 /* Pods_STEMExpo.framework */; };
 		A20E9595237C8843002E1990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E9594237C8843002E1990 /* AppDelegate.swift */; };
 		A20E9597237C8843002E1990 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E9596237C8843002E1990 /* SceneDelegate.swift */; };
 		A20E9599237C8843002E1990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E9598237C8843002E1990 /* ViewController.swift */; };
@@ -15,7 +16,10 @@
 		A20E95A1237C8844002E1990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20E959F237C8844002E1990 /* LaunchScreen.storyboard */; };
 		A20E95AC237C8844002E1990 /* STEMExpoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E95AB237C8844002E1990 /* STEMExpoTests.swift */; };
 		A20E95B7237C931E002E1990 /* stemEXPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E95B6237C931E002E1990 /* stemEXPO.swift */; };
+		A232F021238D9ED10045E75E /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232F020238D9ED10045E75E /* Checkbox.swift */; };
 		A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2444B10237CF75300F82478 /* DetailViewController.swift */; };
+		A27A5C87238EE02700A4B55C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C86238EE02700A4B55C /* GoogleService-Info.plist */; };
+		C2D08A49627F91D849138F57 /* Pods_STEMExpoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B570DC1EAD61CF17962DD6B8 /* Pods_STEMExpoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		237C3EB02BFE8B4FF528C68B /* Pods-STEMExpoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMExpoTests.debug.xcconfig"; path = "Target Support Files/Pods-STEMExpoTests/Pods-STEMExpoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		48FBD7F43B1E0A857943797D /* Pods-STEMExpo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMExpo.debug.xcconfig"; path = "Target Support Files/Pods-STEMExpo/Pods-STEMExpo.debug.xcconfig"; sourceTree = "<group>"; };
+		616226C8F82143D90A115310 /* Pods_STEMExpo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMExpo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A41C00DEA91640CC728A575 /* Pods-STEMExpoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMExpoTests.release.xcconfig"; path = "Target Support Files/Pods-STEMExpoTests/Pods-STEMExpoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A20E9591237C8843002E1990 /* STEMExpo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEMExpo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20E9594237C8843002E1990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20E9596237C8843002E1990 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +49,11 @@
 		A20E95AB237C8844002E1990 /* STEMExpoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEMExpoTests.swift; sourceTree = "<group>"; };
 		A20E95AD237C8844002E1990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20E95B6237C931E002E1990 /* stemEXPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemEXPO.swift; sourceTree = "<group>"; };
+		A232F020238D9ED10045E75E /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		A2444B10237CF75300F82478 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A27A5C86238EE02700A4B55C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B570DC1EAD61CF17962DD6B8 /* Pods_STEMExpoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMExpoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D222B8400DF9FA7D87FDFF16 /* Pods-STEMExpo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMExpo.release.xcconfig"; path = "Target Support Files/Pods-STEMExpo/Pods-STEMExpo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283D2E013AADE6777F0CCA57 /* Pods_STEMExpo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +69,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D08A49627F91D849138F57 /* Pods_STEMExpoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33A38E2D115185D681DD7C77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48FBD7F43B1E0A857943797D /* Pods-STEMExpo.debug.xcconfig */,
+				D222B8400DF9FA7D87FDFF16 /* Pods-STEMExpo.release.xcconfig */,
+				237C3EB02BFE8B4FF528C68B /* Pods-STEMExpoTests.debug.xcconfig */,
+				7A41C00DEA91640CC728A575 /* Pods-STEMExpoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A20E9588237C8843002E1990 = {
 			isa = PBXGroup;
 			children = (
 				A20E9593237C8843002E1990 /* STEMExpo */,
 				A20E95AA237C8844002E1990 /* STEMExpoTests */,
 				A20E9592237C8843002E1990 /* Products */,
+				33A38E2D115185D681DD7C77 /* Pods */,
+				D4A4AE382341152832C6D58B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +110,8 @@
 		A20E9593237C8843002E1990 /* STEMExpo */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C86238EE02700A4B55C /* GoogleService-Info.plist */,
+				A232F020238D9ED10045E75E /* Checkbox.swift */,
 				A20E9594237C8843002E1990 /* AppDelegate.swift */,
 				A20E9596237C8843002E1990 /* SceneDelegate.swift */,
 				A20E9598237C8843002E1990 /* ViewController.swift */,
@@ -105,6 +134,15 @@
 			path = STEMExpoTests;
 			sourceTree = "<group>";
 		};
+		D4A4AE382341152832C6D58B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				616226C8F82143D90A115310 /* Pods_STEMExpo.framework */,
+				B570DC1EAD61CF17962DD6B8 /* Pods_STEMExpoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A20E95B0237C8844002E1990 /* Build configuration list for PBXNativeTarget "STEMExpo" */;
 			buildPhases = (
+				69317C9CF73B9403D518560A /* [CP] Check Pods Manifest.lock */,
 				A20E958D237C8843002E1990 /* Sources */,
 				A20E958E237C8843002E1990 /* Frameworks */,
 				A20E958F237C8843002E1990 /* Resources */,
+				65D55254B4CC639E46EB81C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A20E95B3237C8844002E1990 /* Build configuration list for PBXNativeTarget "STEMExpoTests" */;
 			buildPhases = (
+				5E3CE2AF56B31D74A23B4A9A /* [CP] Check Pods Manifest.lock */,
 				A20E95A3237C8844002E1990 /* Sources */,
 				A20E95A4237C8844002E1990 /* Frameworks */,
 				A20E95A5237C8844002E1990 /* Resources */,
@@ -187,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A20E95A1237C8844002E1990 /* LaunchScreen.storyboard in Resources */,
+				A27A5C87238EE02700A4B55C /* GoogleService-Info.plist in Resources */,
 				A20E959E237C8844002E1990 /* Assets.xcassets in Resources */,
 				A20E959C237C8843002E1990 /* Main.storyboard in Resources */,
 			);
@@ -201,6 +243,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E3CE2AF56B31D74A23B4A9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STEMExpoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D55254B4CC639E46EB81C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STEMExpo/Pods-STEMExpo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STEMExpo/Pods-STEMExpo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69317C9CF73B9403D518560A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STEMExpo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A20E958D237C8843002E1990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +323,7 @@
 			files = (
 				A20E9599237C8843002E1990 /* ViewController.swift in Sources */,
 				A20E9595237C8843002E1990 /* AppDelegate.swift in Sources */,
+				A232F021238D9ED10045E75E /* Checkbox.swift in Sources */,
 				A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */,
 				A20E95B7237C931E002E1990 /* stemEXPO.swift in Sources */,
 				A20E9597237C8843002E1990 /* SceneDelegate.swift in Sources */,
@@ -368,6 +484,7 @@
 		};
 		A20E95B1237C8844002E1990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48FBD7F43B1E0A857943797D /* Pods-STEMExpo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -387,6 +504,7 @@
 		};
 		A20E95B2237C8844002E1990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D222B8400DF9FA7D87FDFF16 /* Pods-STEMExpo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +524,7 @@
 		};
 		A20E95B4237C8844002E1990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 237C3EB02BFE8B4FF528C68B /* Pods-STEMExpoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -428,6 +547,7 @@
 		};
 		A20E95B5237C8844002E1990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A41C00DEA91640CC728A575 /* Pods-STEMExpoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
