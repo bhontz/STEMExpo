@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var expoTableView: UITableView!
     @IBOutlet weak var SBar: UISearchBar!
+    
     var ref: DatabaseReference!
     private var refHandle: DatabaseHandle!
     
@@ -89,8 +90,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 }
 
 extension ViewController: UISearchBarDelegate {
+        
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {return}
         self.viewData = self.viewData.filter({($0.company!).lowercased().contains(searchBarText.lowercased())})
+        searchBar.endEditing(true)
     }
 }
