@@ -19,8 +19,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var checkbox: Checkbox!
     
     var phonenbr: String!
-    var ref: DatabaseReference!
     var selectedElement: [String:Any]!  // retaining the structure of the Firebase node
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +28,10 @@ class DetailViewController: UIViewController {
         checkbox.borderStyle = .square
         checkbox.checkmarkColor = .blue
         checkbox.checkmarkStyle = .tick
+        checkbox.addTarget(self, action: #selector(checkboxValueChanged(sender:)), for: .valueChanged)
 
-        ref = Database.database().reference(withPath: "jsonFIRData")
         fetchNode() {
+            
             if self.selectedElement["COOKIES"] as? Int == 0 {
                 self.checkbox.isChecked = false
             } else {
@@ -51,6 +52,7 @@ class DetailViewController: UIViewController {
     }
     
     func fetchNode(_ completion: @escaping () -> Void) {
+        ref = Database.database().reference(withPath: "jsonFIRData")
         ref.child(keyPass).observeSingleEvent(of: .value, with: { (snapshot) in
             self.selectedElement = snapshot.value as? [String:Any]
             completion()
@@ -60,13 +62,17 @@ class DetailViewController: UIViewController {
     }
     
     @objc func checkboxValueChanged(sender: Checkbox) {
-        print("checkbox value changed: \(sender.isChecked)")
+        if sender.isChecked {
+            self.ref.child(keyPass).child("COOKIES").setValue(1)
+        } else {
+            self.ref.child(keyPass).child("COOKIES").setValue(0)
+        }
     }
     
     @objc func tapPhoneNumber(sender:UITapGestureRecognizer) {
         makePhoneCall(phoneNumber: lblPhone.text ?? "")
-    
     }
+    
     // presents an action dialog to cancel or place phone call
     func makePhoneCall(phoneNumber: String) {
         if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {

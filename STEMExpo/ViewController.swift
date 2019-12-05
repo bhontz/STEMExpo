@@ -6,6 +6,14 @@
 //  Copyright © 2019 brad.hontz. All rights reserved.
 //
 
+/*
+ to restore the search bar functionality, you should break out the firebase read into a function ala DetailedViewController, as you should be able to 'refresh' the view after filtering (here assuming
+ you filtered on the viewData array only].   Alternatively, you could consider extending the new function
+ mentioned above to allow passing the search string text which you could use to filter the call directly
+ from firebase.
+ 
+ */
+
 import UIKit
 import FirebaseDatabase
 
@@ -17,6 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var expoTableView: UITableView!
     @IBOutlet weak var SBar: UISearchBar!
     var viewData = [Item]()
+    var ref: DatabaseReference!
+    private var refHandle: DatabaseHandle!
 
     //    // use this to detect changes in your array after a search bar query
 //    var viewData:[[String:Any]]! {
@@ -37,8 +47,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
 //        SBar.delegate = self
 //        self.viewData = sortedData
-        let ref = Database.database().reference(withPath: "jsonFIRData")
-        ref.observe(.value, with: { snapshot in
+        fetchTableData()
+    }
+    
+    func fetchTableData(){
+        ref = Database.database().reference(withPath: "jsonFIRData")
+        refHandle = ref.observe(.value, with: { snapshot in
             var newItems = [Item]()
             for child in snapshot.children {
                 let item = Item(snapshot: child as! DataSnapshot)
@@ -47,6 +61,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.viewData = newItems.sorted(by: {$0.company! < $1.company!})
             self.expoTableView.reloadData()
         })
+    }
+    
+    deinit {
+        if refHandle != nil {
+            ref.child("jsonFIRData").removeObserver(withHandle: refHandle)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegue(withIdentifier: "seque", sender: self)
     }
 }
+
 
 //extension ViewController: UISearchBarDelegate {
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
