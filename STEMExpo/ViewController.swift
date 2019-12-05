@@ -24,29 +24,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var expoTableView: UITableView!
     @IBOutlet weak var SBar: UISearchBar!
-    var viewData = [Item]()
     var ref: DatabaseReference!
     private var refHandle: DatabaseHandle!
-
-    //    // use this to detect changes in your array after a search bar query
-//    var viewData:[[String:Any]]! {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.expoTableView.reloadData()
-//                // HACK BELOW: this assures that a search term that
-//                // doesn't match ANYTHING returns EVERYTHING
-//                if self.viewData.count == 0 {
-//                    self.viewData = sortedData
-//                }
-//            }
-//        }
-//    }
+    
+    var viewData:[Item] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                // prevents wiping out the tableview if the search bar query doesn't match anything
+                if self.viewData.count == 0 {
+                    self.fetchTableData()
+                }
+                self.expoTableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        SBar.delegate = self
-//        self.viewData = sortedData
+        SBar.delegate = self
+//        self.viewData = sortedData  // if you want to hook up to the static data in stemExpo.swift
         fetchTableData()
     }
     
@@ -91,18 +88,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-
-//extension ViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        guard let searchBarText = searchBar.text else {return}
-//        if searchBarText.lowercased() == "help" {
-//            self.viewData = sortedData
-//        }
-//        // print(searchBarText)
-//        newData = newData.filter({($0["Company"] as! String).lowercased().contains(searchBarText.lowercased())})
-//
-////        self.viewData = self.viewData.filter({($0["Company"] as! String).lowercased().contains(searchBarText.lowercased())})
-//    }
-//}
-
-
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchBarText = searchBar.text else {return}
+        self.viewData = self.viewData.filter({($0.company!).lowercased().contains(searchBarText.lowercased())})
+    }
+}

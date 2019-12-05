@@ -26,8 +26,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         checkbox.borderStyle = .square
-        checkbox.checkmarkColor = .blue
-        checkbox.checkmarkStyle = .tick
+        checkbox.checkmarkColor = .systemYellow
+        checkbox.checkmarkStyle = .cross
         checkbox.addTarget(self, action: #selector(checkboxValueChanged(sender:)), for: .valueChanged)
 
         fetchNode() {
@@ -61,6 +61,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // write to Firebase based upon the checkbox status
     @objc func checkboxValueChanged(sender: Checkbox) {
         if sender.isChecked {
             self.ref.child(keyPass).child("COOKIES").setValue(1)

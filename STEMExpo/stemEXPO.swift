@@ -13,7 +13,7 @@
 import Foundation
 import FirebaseDatabase
 
-// this is used in the ViewController as the tableview populator
+// this is used in the ViewController as the TableView populator
 class Item {
     var ref: DatabaseReference?
     var id: String?
@@ -27,6 +27,10 @@ class Item {
     }
 }
 
+
+// this stuff below was my original attempt at working with the
+// tableview within the ViewController module - here I'd simply imported
+// data into Swift's dictionary view format (slightly different from JSON)
 
 var sortedData: [[String:Any]] = jsonData
 
