@@ -8,6 +8,8 @@ We'll also be using this repo to learn how use Git/Github!
 
 **Version History**
 
+2019-12-18: Added "strikethrough" to the tableview cell's text when the COOKIES database item (used to indicate if cookies were delivered) is set to a value of 1
+
 2019-12-5: Integrated Firebase supporting persistence in the DetailedViewController checkbox selection.  Retained MainViewController search bar functionality. (merged into development branch)
 
 2019-11-18: Added feature that will present a Call / Cancel dialog when a phone number (within the detailed view) is clicked on.   Created branch callphone to serve as an illustration on how to branch and merge back into the development branch.
