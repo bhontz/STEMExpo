@@ -18,19 +18,21 @@ class Item {
     var ref: DatabaseReference?
     var id: String?
     var company: String?
+    var delivered: Int?
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
         id = snapshot.key
         let data = snapshot.value as! [String:Any]
         company = data["Company"] as? String
+        delivered = data["COOKIES"] as? Int
     }
 }
 
 
 // this stuff below was my original attempt at working with the
 // tableview within the ViewController module - here I'd simply imported
-// data into Swift's dictionary view format (slightly different from JSON)
+// data into Swift's dictionary view format (slightly different format from JSON)
 
 var sortedData: [[String:Any]] = jsonData
 

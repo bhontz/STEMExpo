@@ -79,6 +79,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = UITableViewCell()
         let r = self.viewData[indexPath.row]
         cell.textLabel?.text = r.company
+        // within the DetailView, if we checked we delivered cookies, then we strike through the cell text
+        if r.delivered == 1 {
+            cell.textLabel?.attributedText = strikeThroughText(r.company ?? "default")
+        } else {
+            cell.textLabel?.text = r.company
+        }
         return cell
     }
 
@@ -86,6 +92,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let r = self.viewData[indexPath.row]
         keyPass = r.id
         performSegue(withIdentifier: "seque", sender: self)
+    }
+    
+    func strikeThroughText (_ text:String) -> NSAttributedString {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: text)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+        return attributeString
     }
 }
 
