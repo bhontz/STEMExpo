@@ -19,6 +19,7 @@
 		A232F021238D9ED10045E75E /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232F020238D9ED10045E75E /* Checkbox.swift */; };
 		A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2444B10237CF75300F82478 /* DetailViewController.swift */; };
 		A27A5C87238EE02700A4B55C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C86238EE02700A4B55C /* GoogleService-Info.plist */; };
+		A28356EA23AAF3BF00BC38F3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28356E923AAF3BF00BC38F3 /* WebViewController.swift */; };
 		C2D08A49627F91D849138F57 /* Pods_STEMExpoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B570DC1EAD61CF17962DD6B8 /* Pods_STEMExpoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		A232F020238D9ED10045E75E /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		A2444B10237CF75300F82478 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A27A5C86238EE02700A4B55C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A28356E923AAF3BF00BC38F3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B570DC1EAD61CF17962DD6B8 /* Pods_STEMExpoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMExpoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D222B8400DF9FA7D87FDFF16 /* Pods-STEMExpo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMExpo.release.xcconfig"; path = "Target Support Files/Pods-STEMExpo/Pods-STEMExpo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,10 +116,11 @@
 				A232F020238D9ED10045E75E /* Checkbox.swift */,
 				A20E9594237C8843002E1990 /* AppDelegate.swift */,
 				A20E9596237C8843002E1990 /* SceneDelegate.swift */,
-				A20E9598237C8843002E1990 /* ViewController.swift */,
 				A20E95B6237C931E002E1990 /* stemEXPO.swift */,
 				A20E959A237C8843002E1990 /* Main.storyboard */,
+				A20E9598237C8843002E1990 /* ViewController.swift */,
 				A2444B10237CF75300F82478 /* DetailViewController.swift */,
+				A28356E923AAF3BF00BC38F3 /* WebViewController.swift */,
 				A20E959D237C8844002E1990 /* Assets.xcassets */,
 				A20E959F237C8844002E1990 /* LaunchScreen.storyboard */,
 				A20E95A2237C8844002E1990 /* Info.plist */,
@@ -325,6 +328,7 @@
 				A20E9595237C8843002E1990 /* AppDelegate.swift in Sources */,
 				A232F021238D9ED10045E75E /* Checkbox.swift in Sources */,
 				A2444B11237CF75300F82478 /* DetailViewController.swift in Sources */,
+				A28356EA23AAF3BF00BC38F3 /* WebViewController.swift in Sources */,
 				A20E95B7237C931E002E1990 /* stemEXPO.swift in Sources */,
 				A20E9597237C8843002E1990 /* SceneDelegate.swift in Sources */,
 			);

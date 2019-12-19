@@ -49,6 +49,12 @@ class DetailViewController: UIViewController {
             self.lblACPower.text = self.selectedElement["ACPOWER"] as? String
             self.lblWiFi.text = self.selectedElement["WIFI"] as? String
         }
+        
+        // this section handles a left swipe in order to view the companies web site
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
     }
     
     func fetchNode(_ completion: @escaping () -> Void) {
@@ -60,6 +66,10 @@ class DetailViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+         performSegue(withIdentifier: "webseque", sender: self)
+     }
     
     // write to Firebase based upon the checkbox status
     @objc func checkboxValueChanged(sender: Checkbox) {

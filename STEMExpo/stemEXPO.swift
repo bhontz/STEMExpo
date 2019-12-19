@@ -19,6 +19,7 @@ class Item {
     var id: String?
     var company: String?
     var delivered: Int?
+    var url: String?
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
@@ -26,6 +27,7 @@ class Item {
         let data = snapshot.value as! [String:Any]
         company = data["Company"] as? String
         delivered = data["COOKIES"] as? Int
+        url = data["URL"] as? String
     }
 }
 
